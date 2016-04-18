@@ -1,5 +1,5 @@
 from django.contrib import admin
-from imd.models import Service, Category, Gallery
+from imd.models import Service, Category
 
 # Register your models here.
 class ServiceAdmin(admin.ModelAdmin):
@@ -11,4 +11,3 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Gallery)

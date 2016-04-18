@@ -1,7 +1,76 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD{% endblock %}
-{% block title %}Welcome!{% endblock %}
-
+{% block header_index %}
+<div class="jumbotron">
+	<div class="imdindexlogo">
+		<img src="" class="imdlogo">
+		<h2>Design<br>Web<br>Branding</h2>
+	</div>
+</div>
+{% endblock %}
+{% block title %}{% endblock %}
 {% block content %}
-<p>This is the front of the page!</p>
+{% load staticfiles %}
+	<div class="row" id="about">
+		<div class="col-md-10 col-md-offset-1 col-sm-12">
+			<h1>About us</h1>
+			<p>IMD is an agile team of artist, designers, developers, doers, go getters and overall awesome people. We love to build brands, take beautiful photos, construct unique websites and print amazing things with a passion for creating exceptional work for exceptional clients. We are the creators of creativity, the ones who build bridges and tear down walls, all in the pursuit of design immortality.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 col-sm-12">
+			<h1>Services</h1>
+			<div class="row">
+				<div class="col-md-6"></div>
+				{% if category %}
+				<div class="col-md-6">
+				<ul>
+				{% for cat in category %}
+					<li><h2>{{ cat.name }}</h2><p>{{ cat.desc }}</p></li>
+				{% endfor %}
+				</ul>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-md-10 col-md-offset-1 col-sm-12">
+			<h1>Portfolio</h1>
+			{% if gallery %}
+				
+				<div id="lightbox">
+					<ul>
+					{% for gal in gallery %}
+						<li>
+							<div class="gallery-image-container">
+								<img class="gallery-image" src="{{ gal.thumbnail.url }}" alt="{{ gal.name }}" data-large="{{ gal.image.url }}">
+								<div class="image_title">
+									<h5 class="title">{{ gal.name }}</h5>
+								</div>
+							</div>
+						</li>
+					{% endfor %}
+					</ul>
+				</div>
+				
+			{% endif %}
+		</div>
+		<div class="col-md-10 col-md-offset-1 col-sm-12">
+			<h1>Our Clients</h1>
+			<hr>
+			<p>CLIENTS LIST!!!========================>>>>>>>>>>>>></p>
+		</div>
+	</div>
+	<div class="row" id="contact">
+		<div class="col-md-5 col-md-offset-1 col-sm-12">
+			<h1>MAP</h1>
+		</div>
+		<div class="col-md-5 col-sm-12">
+			<form role="form" method="POST" action="">
+				{% csrf_token %}
+            	{{ form.as_p }}
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
 {% endblock %}

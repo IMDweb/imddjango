@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'imd',
+    'portfolio',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,9 +127,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media/')
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static/')
 STATIC_URL = '/static/'
 
 
@@ -136,3 +138,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/"),
     os.path.join(BASE_DIR, "media/"),
     ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_MAIL = 'jesus@imd-sd.com'
+EMAIL_HOST = 'p3plcpnl0181.prod.phx3.secureserver.net'
+EMAIL_HOST_USER = 'jesus@imd-sd.com'
+EMAIL_HOST_PASSWORD = 'SDimd2015'
+EMAIL_USE_TLS = False
+EMAIL_PORT = 465

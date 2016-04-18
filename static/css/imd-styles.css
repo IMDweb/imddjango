@@ -1,0 +1,178 @@
+body {
+	/*Fancy Full page BG*/
+	background: url('../images/grey-bar.jpg');
+	font-family: arial, verdana, tahoma;
+}
+/* ==== lightbox ==== */
+#lightbox {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fff;
+}
+#lightbox ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+#lightbox .gallery-image-container {
+	display: block;
+	margin: 10px;
+	padding: 0px;
+	width: 30%;
+	float: left;
+	height: auto;
+	max-height: 100px;
+	overflow: hidden;
+	background: #fff;
+	text-align: center;
+	border-radius: 5px;
+	border: medium solid #fff;
+	position: relative;
+	cursor: pointer;
+}
+#lightbox .gallery-image {
+	width: 100%;
+}
+#lightbox .title {
+	color: #000;
+	font-weight: bolder;
+	text-align: center;
+	transform: scale(0.2);
+	transition: all 0.25s;
+}
+#lightbox .image_title {
+	background: rgba(255, 255, 255, 0.75);
+	transition: all 0.5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	display: table;
+	width: 100%;
+	height: 100%;
+	max-height: 100px;
+}
+#lightbox li:hover .image_title {
+	opacity: 1;
+
+}
+#lightbox li:hover .title {
+	transform: scale(1);
+}
+
+/*Lightbox element style*/
+.lb_backdrop {
+	background: rgba(0, 0, 0, 0.9);
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+}
+/*The canvas contains the larger image*/
+.lb_canvas {
+	background: white;
+	width: 50px;
+	position: fixed;
+	top: 0; left: 0; /*Will be centered later by Jquery*/
+	box-shadow: 0 0 20px 5px black;
+	padding: 10px;
+}
+.lb_canvas img {
+	width: 100%;
+}
+/*A separate class for loading GIF, for easy Jquery handling*/
+.lb_canvas.loading {
+	background: white;
+}
+/*Lightbox Controls*/
+.lb_controls {
+	width: 400px; 
+	background: rgba(0, 0, 0, 0.75);
+	position: fixed;
+	bottom: 10px;
+	color: white;
+	/*To horizontally center it*/
+	left: 0; right: 0; margin: 0 auto;
+}
+.lb_controls span {
+	line-height: 30px;
+	height: 30px;
+}
+.lb_controls span.inactive {
+	opacity: 0.25;
+}
+.lb_previous, .lb_next {
+	position: absolute;
+	top: 0;
+	padding: 5px 12px;
+	font-family: websymbols;
+	font-size: 14px;
+	background: black;
+	cursor: pointer;
+}
+.lb_previous {
+	left: 0;
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.lb_next {
+	right: 0;
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.lb_title {
+	text-align: center;
+	display: block;
+	font-size: 14px;
+	text-transform: uppercase;
+	padding: 5px 0;
+	font-weight: bold;
+}
+@media screen and (max-width: 970px){
+	#about {
+		background: url('../images/black-bg.jpg') no-repeat fixed;
+		background-size: auto 100%;
+		width: 100%;
+		padding-top: 100px;	
+		padding-bottom: 100px;
+	}
+}
+@media screen and (min-width: 970px){
+	#about {
+		background: url('../images/black-bg.jpg') no-repeat fixed;
+		background-size: 100%;
+		width: 100%;
+		padding-top: 100px;	
+		padding-bottom: 100px;
+	}
+}
+#about h1 {
+	color: #fff;
+}
+#about p {
+	font-size: 24px;
+	color: #fff;
+}
+#about.row {
+	margin: 0px;
+}
+.jumbotron {
+	background: none;
+	margin-bottom: 50%;
+}
+.navbar-inverse {
+	background: #000;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 20px;
+	margin: 0px;
+}
+.navbar-text {
+	color: darkgrey;
+}
+.navbar-text a {
+	color: darkgrey;
+}
+.imdindexlogo {
+	text-align: center;
+	width: 100%;
+	display: table;
+	vertical-align: middle;
+}

@@ -5,18 +5,26 @@
 {% block content %}
 {% if category %}
 <h3>Categories</h3>
-<ul>
+<ul role="tablist">
 	{% for cat in category %}
-	<li>{{ cat.name }}</li>
+	<li role="presentation"><a herf="#{{ cat.name }}">{{ cat.name }}</a></li>
 	{% endfor %}
 </ul>
 {% endif %}
 {% load staticfiles %}
-{% if services %}
-{% for service in services %}
-<img src="{{ service.image }}" alt="{{ service.title }}">
-<h4>{{ service.title }}</h4>
-{% endfor %}
-{% endif %}
+<div class="row">
+	{% if services %}
+	{% for service in services %}
+	<div class="col-md-4">
+		<h4>{{ service.title }}</h4>
+		{% if service.image %}
+			<img src="{{ service.image.url }}" style="width: 350px">
+		{% else %}
+		{% endif %}
+		<p>{{ service.description }}</p>
+	</div>
+	{% endfor %}
+	{% endif %}
+</div>
 
 {% endblock %}
