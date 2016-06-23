@@ -52,3 +52,64 @@ def services(request):
 
 def contact(request):
 	return render(request, 'contact.html', {})
+
+def gallery(request):
+	return render(request, 'gallery.html', {
+		'services': Service.objects.all(),
+		'category': Category.objects.all(),
+		'gallery': ImageGallery.objects.all(),
+		})
+
+def vehicle_wraps(request):
+	partial = ImageGallery.objects.filter(category__title='Partial Wrap')
+	full = ImageGallery.objects.filter(category__title='Full Wrap')
+	color = ImageGallery.objects.filter(category__title='Color Change')
+	return render(request, 'vehicle_wraps.html', {
+		'services': Service.objects.all(),
+		'category': Category.objects.all(),
+		'partial': partial,
+		'full': full,
+		'color': color,
+		})
+
+def tradeshows(request):
+	return render(request, 'tradeshow.html', {
+		'service': Service.objects.all(),
+		'category':Category.objects.all(),
+		})
+
+def web_design(request):
+	return render(request, 'web_design.html', {
+		'service': Service.objects.all(),
+		'category': Category.objects.all(),
+		})
+
+def design_service(request):
+	return render(request, 'design_service.html', {
+		'service': Service.objects.all(),
+		'category': Category.objects.all(),
+		})
+
+def signs_banners(request):
+	return render(request, 'signs_banners.html', {
+		'service': Service.objects.all(),
+		'category': Category.objects.all(),
+		})
+
+def printing(request):
+	return render(request, 'printing.html', {
+		'service': Service.objects.all(),
+		'category': Category.objects.all(),
+		})
+
+def photography(request):
+	return render(request, 'photography.html', {
+		'service': Service.objects.all(),
+		'category': Category.objects.all(),
+		})
+
+def window_wall_floor(request):
+	return render(request, 'window_wall_floor.html', {
+		'service': Service.objects.all(),
+		'category': Category.objects.all(),
+		})

@@ -1,11 +1,12 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from imd import models as imd
 
 # Create your models here.
 class ImageGallery(models.Model):
 	name = models.CharField(max_length=60)
-	category = models.ForeignKey('imd.Category')
+	category = models.ForeignKey('imd.Service')
 	image = models.ImageField(upload_to='galley/', blank=False, null=False)
 	thumbnail = models.ImageField(upload_to='gallery/thumbnail/', blank=False, null=False)
 	desc = models.TextField(max_length=250)

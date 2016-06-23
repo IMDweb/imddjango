@@ -1,39 +1,89 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD{% endblock %}
+{% load staticfiles %}
 {% block header_index %}
 <div class="jumbotron">
 	<div class="imdindexlogo">
-		<img src="" class="imdlogo">
-		<h2>Design<br>Web<br>Branding</h2>
+		<img src=" {% static "images/logo-white.png" %} " class="imdlogo">
 	</div>
+	
+</div>
+<div class="slogan">
+	<div class="row" id=>
+		<div class="col-md-3">
+			<h2><span class="bracket">[</span> Design,</h2>
+		</div>
+		<div class="col-md-3">
+			<h2>Print,</h2>
+		</div>
+		<div class="col-md-3">
+			<h2>and</h2>
+		</div>
+		<div class="col-md-3">
+			<h2>Web <span class="bracket">]</span></h2>
+		</div>
+	</div>
+	
 </div>
 {% endblock %}
 {% block title %}{% endblock %}
 {% block content %}
-{% load staticfiles %}
+
 	<div class="row" id="about">
 		<div class="col-md-10 col-md-offset-1 col-sm-12">
-			<h1>About us</h1>
+			<h1 class="titles"><span class="fa fa-angle-right fa-2x arrow-red-bg"></span> ABOUT</h1>
 			<p>IMD is an agile team of artist, designers, developers, doers, go getters and overall awesome people. We love to build brands, take beautiful photos, construct unique websites and print amazing things with a passion for creating exceptional work for exceptional clients. We are the creators of creativity, the ones who build bridges and tear down walls, all in the pursuit of design immortality.</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 col-sm-12">
-			<h1>Services</h1>
+			
 			<div class="row">
-				<div class="col-md-6"></div>
 				{% if category %}
-				<div class="col-md-6">
-				<ul>
+				<div class="col-md-12">
 				{% for cat in category %}
-					<li><h2>{{ cat.name }}</h2><p>{{ cat.desc }}</p></li>
+					<div class="col-md-6">
+						<h2 class="cat-title"><span class="arrow-wht-bg fa fa-angle-right fa-2x"></span> {{ cat.name }}</h2>
+						<p>{{ cat.desc }}</p>	
+					</div>
+					
 				{% endfor %}
-				</ul>
+				
 				</div>
 				{% endif %}
 			</div>
 		</div>
-		<div class="col-md-10 col-md-offset-1 col-sm-12">
+		<div class="col-md-12 brands">
+			<img src="{% static "images/3m.png" %}" class="brands-used">
+			<img src="{% static "images/oracal.png" %}" class="brands-used">
+			<img src="{% static "images/hp.png" %}" class="brands-used">
+			<img src="{% static "images/xerox.png" %}" class="brands-used">
+			<img src="{% static "images/avery.png" %}" class="brands-used">
+		</div>
+	</div>
+		<div class="col-md-12 col-sm-12" id="types-of-wrap">
+			<div class="row">
+				<div class="col-md-2 col-md-offset-2 col-sm-12 wrap-type partial-w">
+					<h2>Partial</h2>
+					<hr class="dashed-hr">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra.</p>
+					<div class="wrap-button"><a href="{%  url 'vehicle_wraps' %}#partial " class="btn btn-vw white">Learn More</a></div>
+				</div>
+				<div class="col-md-2 col-md-offset-1 col-sm-12 wrap-type full-w">
+					<h2>Full</h2>
+					<hr class="dashed-hr-wht">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis.  </p>
+					<div class="wrap-button"><a href="{%  url 'vehicle_wraps' %}#full " class="btn btn-vw">Learn More</a></div>
+				</div>
+				<div class="col-md-2 col-md-offset-1 col-sm-12 wrap-type change-w">
+					<h2>Color Change</h2>
+					<hr class="dashed-hr-wht">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque.</p>
+					<div class="wrap-button"><a href="{%  url 'vehicle_wraps' %}#color " class="btn btn-vw">Learn More</a></div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="col-md-10 col-md-offset-1 col-sm-12">
 			<h1>Portfolio</h1>
 			{% if gallery %}
 				
@@ -53,13 +103,13 @@
 				</div>
 				
 			{% endif %}
+		</div> -->
+		<div class="row sign-sec">
+			<div class="col-md-10 col-md-offset-1 signs">
+				<h2><span class="fa fa-angle-right fa-2x"></span> Signs</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque.</p>
+			</div>
 		</div>
-		<div class="col-md-10 col-md-offset-1 col-sm-12">
-			<h1>Our Clients</h1>
-			<hr>
-			<p>CLIENTS LIST!!!========================>>>>>>>>>>>>></p>
-		</div>
-	</div>
 	<div class="row" id="contact">
 		<div class="col-md-5 col-md-offset-1 col-sm-12">
 			<h1>MAP</h1>

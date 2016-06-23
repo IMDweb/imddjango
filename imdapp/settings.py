@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'imd',
     'portfolio',
+    'mailchimp',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -146,3 +147,5 @@ EMAIL_HOST_USER = 'jesus@imd-sd.com'
 EMAIL_HOST_PASSWORD = 'SDimd2015'
 EMAIL_USE_TLS = False
 EMAIL_PORT = 465
+
+MAILCHIMP_API_KEY = 'c67b588eb516ec5137e840d2c493dc11-us13'

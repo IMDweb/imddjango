@@ -141,7 +141,7 @@ $(document).ready(function(){
 	=====LIGHTBOX END======
 	=======================
 	*/
-	$(window).scroll(function(){
+	/*$(window).scroll(function(){
 		if ($(this).scrollTop() > parseInt($('.jumbotron').outerHeight(true))){
 			$('.navbar-inverse').addClass('navbar-fixed-top');
 			$('.navbar-inverse').css('paddingTop', '0px');
@@ -151,5 +151,15 @@ $(document).ready(function(){
 			$('.navbar-inverse').css('paddingTop', '10px');
 			$('.navbar-inverse').css('paddingBottom', '10px');
 		}
-	})
+	}) */
+			// Javascript to enable link to tab
+		var url = document.location.toString();
+		if (url.match('#')) {
+		    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+		} 
+
+		// Change hash for page-reload
+		$('.nav-tabs a').on('shown.bs.tab', function (e) {
+		    window.location.hash = e.target.hash;
+		})
 })

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block head_title %}IMD-SD | Vehicle Wraps{% endblock %}
+{% block title %}{% endblock %}
+{% block header_index %}
+	<div class="jumbotron"></div>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+	<div class="row">
+		<div class="col-md-2 col-md-offset-1">
+			<ul class="nav nav-pills nav-stacked nav-tabs" role="tablist" id="vwrap-nav">
+				<li role="presentation" class="active"><a aria-controls="partial" href="#partial" role="tab" aria-controls="partial" data-toggle="tab">Partial Wrap</a></li>
+				<li role="presentation"><a href="#full" role="tab" aria-controls="full" data-toggle="tab">Full Wrap</a></li>
+				<li role="presentation"><a href="#color" role="tab" aria-controls="color" data-toggle="tab">Color Change</a></li>
+			</ul>
+		</div>
+		<div class="col-md-8">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="partial">
+					<h1>PARTIAL WRAP</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque a mi euismod sagittis. Vivamus euismod velit ut massa hendrerit, quis vehicula dolor tincidunt. Quisque eleifend justo ac quam imperdiet tempus. Curabitur aliquam eleifend elit id vulputate. Nullam vehicula nulla a nulla venenatis blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit nisi non dignissim convallis. Nunc ut metus varius, lacinia erat nec, mattis purus. Curabitur efficitur porta enim, cursus scelerisque risus luctus non.</p>
+					<div class="price-slider-details" id="partial-wrap-details">
+						<p>Size of Vehicle: <i id="partial-sq"></i>sq/f </p>
+						<p>Estimated Price: $<i id="partial-multiply"></i><br><span class="fa fa-angle-down fa-2x"></span></p>
+					</div>
+					
+					
+					<div id="partial-range"></div>
+							{% for par in partial %}
+								<img src="{{par.image.url}}" alt="{{ par.name }}">
+							{% endfor %}
+				</div>
+				<div role="tabpanel" class="tab-pane" id="full">
+					<h1>FULL WRAP</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque a mi euismod sagittis. Vivamus euismod velit ut massa hendrerit, quis vehicula dolor tincidunt. Quisque eleifend justo ac quam imperdiet tempus. Curabitur aliquam eleifend elit id vulputate. Nullam vehicula nulla a nulla venenatis blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit nisi non dignissim convallis. Nunc ut metus varius, lacinia erat nec, mattis purus. Curabitur efficitur porta enim, cursus scelerisque risus luctus non.</p>
+					<div class="price-slider-details" id="partial-wrap-details">
+						<p>Size of Vehicle: <i id="full-sq"></i>sq/f </p>
+						<p>Estimated Price: $<i id="full-multiply"></i><br><span class="fa fa-angle-down fa-2x"></span></p>
+					</div>
+					
+					
+					<div id="full-range"></div>
+					{% for f in full %}
+						<img src="{{ f.image.url}}" alt="{{f.name}}">
+					{% endfor %}
+				</div>
+				<div role="tabpanel" class="tab-pane" id="color">
+					<h1>COLOR CHANGE</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque a mi euismod sagittis. Vivamus euismod velit ut massa hendrerit, quis vehicula dolor tincidunt. Quisque eleifend justo ac quam imperdiet tempus. Curabitur aliquam eleifend elit id vulputate. Nullam vehicula nulla a nulla venenatis blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit nisi non dignissim convallis. Nunc ut metus varius, lacinia erat nec, mattis purus. Curabitur efficitur porta enim, cursus scelerisque risus luctus non.</p>
+					<div class="price-slider-details" id="partial-wrap-details">
+						<p>Size of Vehicle: <i id="color-sq"></i>sq/f </p>
+						<p>Estimated Price: $<i id="color-multiply"></i><br><span class="fa fa-angle-down fa-2x"></span></p>
+					</div>
+					
+					
+					<div id="color-range"></div>
+					{% for c in color %}
+						<img src="{{ c.image.url }}" alt="{{ c.name }}">
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script type="text/javascript">
+		$(function() {
+    		var hash = window.location.hash;
+
+    		// do some validation on the hash here
+
+    		hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+    		
+    		var list = document.getElementById('vwrap-nav');
+    		var listPosition = $('#vwrap-nav').position();
+
+    		if (window.innerWidth > 750) {
+    			$(window).scroll(function() {
+    				if ($(this).scrollTop() > 680 ) {
+    					$('#vwrap-nav').addClass('sticky');
+    				}
+    				else {
+    					$('#vwrap-nav').removeClass('sticky');
+    				}
+    			})
+    		}
+
+    		var timesSeven = 14;
+    		var timesEight = 16;
+    		$('#partial-range').slider({
+    			value: 50,
+    			min: 1,
+    			max: 100,
+    			step: 1,
+    			slide: function( event, ui ) {
+    				$('#partial-sq').html( ui.value );
+    				$('#partial-multiply').html(timesSeven * (ui.value));
+    			}
+    		});
+    		$('#partial-sq').html($('#partial-range').slider("value"));
+    		$('#partial-multiply').html(timesSeven * ($('#partial-range').slider("value")));
+    		
+    		$('#full-range').slider({
+    			value: 550,
+    			min: 100,
+    			max: 1000,
+    			step: 1,
+    			slide: function( event, ui ) {
+    				$('#full-sq').html( ui.value );
+    				$('#full-multiply').html(timesSeven * (ui.value));
+    			}
+    		});
+    		$('#full-sq').html($('#full-range').slider("value"));
+    		$('#full-multiply').html(timesSeven * ($('#full-range').slider("value")));
+    		
+    		$('#color-range').slider({
+    			value: 50,
+    			min: 1,
+    			max: 100,
+    			step: 1,
+    			slide: function( event, ui ) {
+    				$('#color-sq').html( ui.value );
+    				$('#color-multiply').html(timesEight * (ui.value));
+    			}
+    		});
+    		$('#color-sq').html($('#color-range').slider("value"));
+    		$('#color-multiply').html(timesEight * ($('#partial-range').slider("value")));
+
+		});
+	</script>
+
+{% endblock %}

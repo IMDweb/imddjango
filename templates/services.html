@@ -4,27 +4,31 @@
 
 {% block content %}
 {% if category %}
-<h3>Categories</h3>
-<ul role="tablist">
-	{% for cat in category %}
-	<li role="presentation"><a herf="#{{ cat.name }}">{{ cat.name }}</a></li>
-	{% endfor %}
-</ul>
-{% endif %}
-{% load staticfiles %}
-<div class="row">
-	{% if services %}
-	{% for service in services %}
-	<div class="col-md-4">
-		<h4>{{ service.title }}</h4>
-		{% if service.image %}
-			<img src="{{ service.image.url }}" style="width: 350px">
-		{% else %}
-		{% endif %}
-		<p>{{ service.description }}</p>
+<div class="jumbotron"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			{% endif %}
+			{% load staticfiles %}
+			<div class="row service-grid">
+				{% if services %}
+				{% for service in services %}
+				<div class="col-md-4 col-sm-6 item-serv">
+					<h3>{{ service.title }}</h3>
+					{% if service.image %}
+					<a href="/services/{{ service.category.slug }}"><img src="{{ service.image.url }}" style="width: 350px"></a>
+					{% else %}
+					{% endif %}
+					<hr>
+					<p>{{ service.description }}</p>
+					<a href="/services/{{ service.category.slug }}"><i>{{ service.category }}</i></a>
+				</div>
+				{% endfor %}
+				{% endif %}
+			</div>
+		</div>
 	</div>
-	{% endfor %}
-	{% endif %}
 </div>
+
 
 {% endblock %}
