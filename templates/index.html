@@ -20,7 +20,7 @@
         <div class="col-lg-6 col-md-6 isais-pic">
         </div>
 	</div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-md-2 col-md-offset-1">
             <h1 class="border-bottom-dashed oswald-medium">Vehicle Wraps</h1>
             <p class="text-gray">A wrap is a large vinyl graphic or decal thats applied directly over the original paint of the vehicle. The application of the wrap allows you to change the vehicles appearance in a very short period of time and in turn allows you to remove the wrap, returning the vehicle back to its original condition if necessary.</p>
@@ -29,6 +29,16 @@
             <h1 class="border-bottom-dashed oswald-medium">Protecting You Paint</h1>
             <p class="text-gray">Your vehicles will inevitably show the signs of clocking up miles on Britain’s motorways. By wrapping your vehicle you can not only enhance your brand, you can also protect your paintwork. We always use matching protective over-laminate with our vehicle wraps, which extends their life and look as well as protecting your paintwork from stone chips and minor abrasions.</p>
         </div>
+    </div>-->
+    <div class="container-fluid">
+    	{% if category %}
+    		{% for cat in category %}
+    		<div class="col-md-6">
+    			<h2 class="border-bottom-dashed oswald-medium"><a href="services/{{cat.slug}}">{{ cat.name }}</a></h2>
+				<p class="text-grey"> {{ cat.desc}} </p>
+    		</div>
+    		{% endfor %}
+    	{% endif %}
     </div>
     <div class="row rick-pic">
     </div>
@@ -65,13 +75,7 @@
 				
 			{% endif %}
 		</div> -->
-		<div class="row sign-sec">
-			<div class="col-md-10 col-md-offset-1 signs">
-				<h2><span class="fa fa-angle-right fa-2x"></span> Signs</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque.</p>
-			</div>
-		</div>
-	<div class="row" id="contact">
+	<!-- <div class="row" id="contact">
 		<div class="col-md-5 col-md-offset-1 col-sm-12">
 			<h1>MAP</h1>
 		</div>
@@ -82,6 +86,6 @@
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
-	</div>
+	</div>-->
 </div>
 {% endblock %}

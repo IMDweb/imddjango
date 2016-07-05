@@ -3,6 +3,14 @@ body {
 	font-family: arial, verdana, tahoma;
 	background-color: #fff;
 }
+
+a {
+	color: #000;
+}
+a:hover {
+	color: #f00;
+	text-decoration: none;
+}
 /* ==== lightbox ==== */
 #lightbox {
 	width: 100%;
