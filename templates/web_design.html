@@ -1,12 +1,62 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD | Web Design{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h1>Web Design</h1>
-		</div>
-	</div>
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row web-header">
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row color-mustard"> 
+        <div class="col-md-5 col-lg-offset-1">
+            <img src="{% static 'images/wizard.jpg' %}" style="width: 100%">
+        </div> 
+        <div class="col-lg-4 col-lg-offset-1">
+            <h1 class="text-white border-bottom-dashed oswald-medium">Web Design</h1>
+            <p>IMD has got you covered when it comes to designing eye-catching, creative, professional and cost-effective web design. Our talented staff will help translate your vision into reality. We concentrate on your unique characteristics to distinguish you from the competition and create a strong public image. Let us help you gain a web presence that will support your product or service and communicate your concept to the world.</p>
+            <h3 class="text-white oswald-medium">Why do I need a website?</h3>
+            <p>Companies spend millions creating brochures and distributing them. By having a website you can reach customers outside of you typical network. Your potential customers can find out about you and any of your products Online. If you get most of your business through networking and personal connections, then they will want to check out your website.</p>
+            <h3 class="text-white oswald-medium">More Customers</h3>
+            <p>More than 2.4 billion people use the internet every day, and some 90% of those have purchased something, or contacted a company, online in the last 12 months. So by not having a website, you will be missing out on a big piece of the pie.</p>
+        
+        </div>
+    </div>
+    <div class="row color-mustard bottom-padding">
+        <div class="col-lg-2 col-lg-offset-2 col-md-4 col-sm-4 col-xs-4">
+            <img src="{% static 'images/wireframe.png' %}" class="img-responsive">
+            <h1 class="text-center text-white oswald-medium">Wire Frame</h1>
+            <h4 class="text-center oswald-medium">Sketch outline<br><br>Wire frame<br><br>Strategize user experience</h4>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 col-md-4 col-sm-4 col-xs-4">
+            <img src="{% static 'images/develop.png' %}" class="img-responsive">
+            <h1 class="text-center text-white oswald-medium">Develop</h1>
+            <h4 class="text-center oswald-medium">Code Webpages<br><br>Style content<br><br>Back-end Development</h4>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 col-md-4 col-sm-4 col-xs-4">
+            <img src="{% static 'images/deploy.png' %}" class="img-responsive">
+            <h1 class="text-center text-white oswald-medium">Deploy</h1>
+            <h4 class="text-center oswald-medium">Optimizing web pages<br><br>AB testing<br><br>Publishing</h4>
+        </div>
+    </div>
+    <div class="row dark-blue"> 
+        <div class="col-lg-offset-1 col-lg-4 vcenter">
+            <h1 class="text-white border-bottom-dashed oswald-medium">Email Marketing</h1>
+            <p class="text-mustard">Email marketing is a form of direct marketing that uses electronic mail as a means of communicating commercial or fundraising messages to an audience. In its broadest sense, every email sent to a potential or current customer could be considered email marketing.</p>
+            <h3 class="text-white oswald-medium">How can it help me?</h3>
+            <p class="text-mustard">Companies spend millions creating brochures and distributing them. By having a website you can reach customers outside of you typical network. Your potential customers can find out about you and any of your products Online. If you get most of your business through networking and personal connections, then they will want to check out your website.</p>
+        </div>
+        <div class="col-lg-offset-1 col-md-5">
+            <img src="{% static 'images/email-marketing.png' %}" class="img-responsive">
+        </div> 
+    </div>
+    <div class="row color-mustard bottom-padding">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h1 class="text-center text-white border-bottom-dashed oswald-medium">Dont Worry!</h1>
+            <p class="lead text-center oswald-medium">The websites and email campaigns we build for you are <strong>100% responsive</strong>, so they work on all your devises while looking exceptionally professional.</p>
+        </div>
+        <div class="col-lg-4 col-lg-offset-4">
+            <img src="{% static 'images/responsive.png' %}" class="img-responsive">
+        </div>
+    </div>
 </div>
 {% endblock %}

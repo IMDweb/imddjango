@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD | Window / Wall / Floor{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row wall-header">
+    </div>
+</div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<h1>Window / Wall / Floor</h1>
+		<div class="col-lg-offset-1 col-lg-4 col-md-6 col-sm-6">
+            <h1 class="border-bottom-dashed oswald-medium">Windows / Walls / Floors</h1>
+            <p class="text-gray">Our indoor wall murals and custom wall paper are ideal for large indoor wall spaces, where texturing is a consideration. We print our wall murals and custom wallpaper on a wallpaper-like material, specially formulated for our large-format printer. Our wall murals and custom wallpaper is affixed to a wall like traditional wallpaper. This application is ideal for homes, offices and corporate suites – places where the consumer’s creative demands typically exceed the limits of wallpaper.</p>
+            <h3 class="oswald-medium">Perforated</h3>
+            <p class="text-gray">Make a statement with custom perforated window decals: the ultimate way to dress up any storefront or office window with business advertising or decor. Perforated vinyl window decals appear opaque from the outside, but allow visibility from the inside. With specially-designed micro-punctures on over 50% of the film, your decals achieve a unique one-way appearance that really makes an impact.</p>
+            <h3 class="oswald-medium">Wall Wraps and Decals</h3>
+            <p class="text-gray">Create custom Wall Decals for any room of your home or business. The durable vinyl material will apply easily to any smooth surface and will remove clean. Choose from a variety of materials or styles to create a seamless, professional looking design for your walls at an affordable cost.</p>
+            <h3 class="oswald-medium">Floors</h3>
+            <p class="text-gray">Give your retail store or business location a professional look by creating and installing our custom vinyl floor decals and graphics. These floor decals are 3.5 mil thick so as to be durable enough for foot traffic yet not be a nuisance to your customers.</p>
 		</div>
-	</div>
+        <div class="col-lg-6 top-padding bottom-padding">
+            <img src="{% static 'images/floor-1.jpg' %}" class="img-responsive">
+        </div>
+    </div>
 </div>
 {% endblock %}

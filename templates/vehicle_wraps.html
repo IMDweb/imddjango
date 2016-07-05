@@ -2,66 +2,47 @@
 {% block head_title %}IMD-SD | Vehicle Wraps{% endblock %}
 {% block title %}{% endblock %}
 {% block header_index %}
-	<div class="jumbotron"></div>
 {% endblock %}
-
 {% block content %}
 {% load staticfiles %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 vehicle-header">
+            <img src="{% static 'images/logo-wraps.png' %}" class="image-head">
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-2 col-md-offset-1">
-			<ul class="nav nav-pills nav-stacked nav-tabs" role="tablist" id="vwrap-nav">
-				<li role="presentation" class="active"><a aria-controls="partial" href="#partial" role="tab" aria-controls="partial" data-toggle="tab">Partial Wrap</a></li>
-				<li role="presentation"><a href="#full" role="tab" aria-controls="full" data-toggle="tab">Full Wrap</a></li>
-				<li role="presentation"><a href="#color" role="tab" aria-controls="color" data-toggle="tab">Color Change</a></li>
-			</ul>
+		<div class="col-md-4 col-lg-offset-1">
+			<h1 class="border-bottom-dashed oswald-medium">Vehicle Wraps</h1>
+            <p class="text-gray">A wrap is a large vinyl graphic or decal thats applied directly over the original paint of the vehicle. The application of the wrap allows you to change the vehicles appearance in a very short period of time and in turn allows you to remove the wrap, returning the vehicle back to its original condition if necessary.</p>
+            <h3 class="oswald-medium">Protecting you paint</h3>
+            <p class="text-gray">Your vehicles will inevitably show the signs of clocking up miles on Britain’s motorways. By wrapping your vehicle you can not only enhance your brand, you can also protect your paintwork. We always use matching protective over-laminate with our vehicle wraps, which extends their life and look as well as protecting your paintwork from stone chips and minor abrasions.</p>
+            <h3 class="oswald-medium">Professional image</h3>
+            <p class="text-gray">Vehicle wrapping and vehicle graphics are a great way of strengthening your brand identity, giving your business a professional image. Your van, car, truck, coach or fleet graphics can be as understated or as spectacular as you wish, with photographic images creating virtually any look or design. What does it say about your business when you have tired looking vehicles on the road?</p>
+            <h3 class="oswald-medium">Removabilty of graphics</h3>
+            <p class="text-gray">Finally, due to the quality of the vehicle graphics materials we use you will not have problems removing the graphics at the end of the materials lifetime. Inferior vehicle wrapping products may look fine in the short term but they’ll offer you future problems including a lack of removability and damage to paintwork. If you have other concerns about removability feel free to ask.</p>
 		</div>
-		<div class="col-md-8">
-			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="partial">
-					<h1>PARTIAL WRAP</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque a mi euismod sagittis. Vivamus euismod velit ut massa hendrerit, quis vehicula dolor tincidunt. Quisque eleifend justo ac quam imperdiet tempus. Curabitur aliquam eleifend elit id vulputate. Nullam vehicula nulla a nulla venenatis blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit nisi non dignissim convallis. Nunc ut metus varius, lacinia erat nec, mattis purus. Curabitur efficitur porta enim, cursus scelerisque risus luctus non.</p>
-					<div class="price-slider-details" id="partial-wrap-details">
-						<p>Size of Vehicle: <i id="partial-sq"></i>sq/f </p>
-						<p>Estimated Price: $<i id="partial-multiply"></i><br><span class="fa fa-angle-down fa-2x"></span></p>
-					</div>
-					
-					
-					<div id="partial-range"></div>
-							{% for par in partial %}
-								<img src="{{par.image.url}}" alt="{{ par.name }}">
-							{% endfor %}
-				</div>
-				<div role="tabpanel" class="tab-pane" id="full">
-					<h1>FULL WRAP</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque a mi euismod sagittis. Vivamus euismod velit ut massa hendrerit, quis vehicula dolor tincidunt. Quisque eleifend justo ac quam imperdiet tempus. Curabitur aliquam eleifend elit id vulputate. Nullam vehicula nulla a nulla venenatis blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit nisi non dignissim convallis. Nunc ut metus varius, lacinia erat nec, mattis purus. Curabitur efficitur porta enim, cursus scelerisque risus luctus non.</p>
-					<div class="price-slider-details" id="partial-wrap-details">
-						<p>Size of Vehicle: <i id="full-sq"></i>sq/f </p>
-						<p>Estimated Price: $<i id="full-multiply"></i><br><span class="fa fa-angle-down fa-2x"></span></p>
-					</div>
-					
-					
-					<div id="full-range"></div>
-					{% for f in full %}
-						<img src="{{ f.image.url}}" alt="{{f.name}}">
-					{% endfor %}
-				</div>
-				<div role="tabpanel" class="tab-pane" id="color">
-					<h1>COLOR CHANGE</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque a mi euismod sagittis. Vivamus euismod velit ut massa hendrerit, quis vehicula dolor tincidunt. Quisque eleifend justo ac quam imperdiet tempus. Curabitur aliquam eleifend elit id vulputate. Nullam vehicula nulla a nulla venenatis blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit nisi non dignissim convallis. Nunc ut metus varius, lacinia erat nec, mattis purus. Curabitur efficitur porta enim, cursus scelerisque risus luctus non.</p>
-					<div class="price-slider-details" id="partial-wrap-details">
-						<p>Size of Vehicle: <i id="color-sq"></i>sq/f </p>
-						<p>Estimated Price: $<i id="color-multiply"></i><br><span class="fa fa-angle-down fa-2x"></span></p>
-					</div>
-					
-					
-					<div id="color-range"></div>
-					{% for c in color %}
-						<img src="{{ c.image.url }}" alt="{{ c.name }}">
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="col-lg-2 col-md-2 col-sm-4 top-padding">
+            <img src="{% static 'images/90%.png' %}">
+            <h3 class="oswald-medium text-center">Of travelers notice vehicle wrapped graphics.</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 top-padding">
+            <img src="{% static 'images/75%.png' %}">
+            <h3 class="oswald-medium text-center">Of consumers form opinions on companies based on fleet graphics.</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 top-padding">
+            <img src="{% static 'images/30%.png' %}">
+            <h3 class="oswald-medium text-center">Of consumers base buying decisions on impressions they received from company vehicles.</h3>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <h1 class="border-bottom-dashed oswald-medium text-center">How many people will see my graphic?</h1>
+            <img src="{% static 'images/thousand.png' %}" class="img-responsive">
+        </div>
+        
+    </div>
+</div>
 	<script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
 	<script type="text/javascript">
 		$(function() {

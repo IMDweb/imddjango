@@ -1,12 +1,35 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD | Printing{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row decals-header">
+    </div>
+</div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<h1>Printing</h1>
+		<div class="col-lg-offset-1 col-lg-4 col-md-6 col-sm-6">
+            <h1 class="border-bottom-dashed oswald-medium">Printing</h1>
+            <p class="text-gray">Your presentations, flyer’s and posters speak for you wherever they go and color makes you look like a pro. It brings your ideas to life and underscores the quality of your products or services.</p>
+            <h3 class="oswald-medium">Flyers</h3>
+            <p class="text-gray">Flyer’s have been a marketing staple for decades – and with good reason. They’re essential for promoting events, advertising sales, drumming up business for store openings and so much more.</p>
+            <h3 class="oswald-medium">Business Cards</h3>
+            <p class="text-gray">A punch of color on your custom business card adds flair and meaning. Personalize your card with colors that illustrate features of your company. Our professional printers will deliver the quality you need to promote your business.</p>
+            <h3 class="oswald-medium">Decals & Vinyl Stickers</h3>
+            <p class="text-gray">Made from durable vinyl material and printed in full color, Decals get your message across professionally and effectively, and apply easily to any smooth surface.</p>
+            <img src="{% static 'images/xerox-2.png' %}" class="xerox">
 		</div>
+        <div class="col-lg-6">
+            <img src="{% static 'images/hp-latex.png' %}" class="img-responsive">
+        </div>
+    </div>
+    <div class="row color-orange top-padding bottom-padding">
+        <div class="col-lg-4 col-lg-offset-6">
+            <h3 class="oswald-medium">Binding</h3>
+            <p class="text-white">Create professional-looking reports for meetings, presentations or school assignments with binding equipment. Binding combs and spines keep pages tightly bound together while still allowing them to turn easily, and binding covers give a clean, finished appearance to any report or presentation. Use these tools as well as binders and accessories to organize and present documents in the best light possible.</p>
+            <h3 class="oswald-medium">Binding Covers</h3>
+            <p class="text-white">Add some glossy protection to a custom title page or give a report a uniform, clean look by adding a clear or glossy binding cover. These can be the finishing touch to a report or presentation.</p>
+        </div>
 	</div>
 </div>
 {% endblock %}

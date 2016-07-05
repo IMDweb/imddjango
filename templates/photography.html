@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD | Photography{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row studio">
+    </div>
+<div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<h1>Photography</h1>
+		<div class="col-lg-offset-1 col-lg-4 col-md-6 col-sm-8">
+            <h1 class="border-bottom-dashed oswald-medium">Photography</h1>
+            <p class="text-gray">High quality visual content is essential for any effective digital mar- keting campaign. The sophisticated modern consumer expects to see what they are going to get, wear, taste and experience long before they will do so in person.</p>
+            <h3 class="oswald-medium">Commercial</h3>
+            <p class="text-gray">We provide comprehensive commercial photography services to handle all of your website, advertising, commercial, product, food and fashion photography needs. From a on-site shoot of your office for your website to a new head shot for a brochure, we’ve got you cov- ered.</p>
+            <h3 class="oswald-medium">Product</h3>
+            <p class="text-gray">First impressions are everything. Right or wrong, the quality of your images greatly influence a customer’s perception of your product or service. You may produce the world’s best “widgets”, but if you market them using low quality photographs the world will assume your prod- ucts are of low quality as well. We will capture the best quality photo- graphs of your product that really translates the type of business you offer.</p>
+            <h3 class="oswald-medium">We do it all</h3>
+            <p class="text-gray">After the photo shoot our post-production experts will carefully color correct and prep the images for web and print use. At your request we also provide complete manipulation, composition and retouching service.</p>
 		</div>
-	</div>
+        <div class="col-lg-6 col-md-6">
+            <img src="{% static 'images/camera.png' %}" class="img-responsive">
+            <img src="{% static 'images/camera-2.png' %}" class="flash">
+        </div>
+    </div>
+
 </div>
 {% endblock %}

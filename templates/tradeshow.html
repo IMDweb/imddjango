@@ -2,12 +2,39 @@
 {% block head_title %}IMD-SD | Tradeshows{% endblock %}
 {% block title %}{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row tradeshow">
+    </div>
+</div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-9">
-			<h1>Trade shows</h1>
+		<div class="col-lg-offset-1 col-lg-4">
+            <h1 class="border-bottom-dashed oswald-medium">Tradeshow Booths</h1>
+            <p class="text-gray">Looking for brilliant graphics that attract customers to your booth? You’ve come to the right place! We give you bright graphics and crisp photos that demand attention. Our designers have produced effective trade show graphics for hundreds of trade show booths.</p>
+            <h3 class="oswald-medium">Backdrop banners</h3>
+            <p class="text-gray">You can put together a very attractive booth on a budget by making a vinyl banner that hangs at the back of your booth. Rent a table to go in front, and you have an attractive booth that will draw in new customers.</p>
+            <h3 class="oswald-medium">Table Top Displays</h3>
+            <p class="text-gray">We offer  tabletop displays for trade show booths . They fold up into a portfolio size case that fits easily into a car’s trunk. We see a lot of them being used for smaller local shows, and many companies buy one for each of their sales people.</p>
 		</div>
+        <div class="col-lg-6">
+            <img src="{% static 'images/tradeshow.png' %}" class="img-responsive">
+        </div>
+    </div>
+    <div class="row color-blue top-padding">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h1 class="text-center text-white border-bottom-dashed oswald-medium">Show Up Prepared</h1>
+            <p class="lead text-center oswald-medium text-gray">Dont let your tradeshow booth be a sight for soar eyes. Our tradeshow designs will give you an edge in the competition and have you raining business cards.</p>
+        </div>
+        <div class="col-lg-6 col-lg-offset-1">
+            <img src="{% static 'images/hand-card.png' %}" class="img-responsive">
+        </div>
+        <div class="col-lg-4">
+            <h3 class="oswald-medium text-white">Retractable Banners</h3>
+            <p class="text-gray">Set the retractable banner stand on the floor, three pole sections fit together, and you pull the graphic up to hang on the pole. This economical retractable banner stand will do the job for less. It’s the right one for those on a budget who don’t want to sacrifice looks!</p>
+            <h3 class="oswald-medium text-white">Tradeshow & Canopy Tents</h3>
+            <p class="text-gray">When you need a branded pop up tent for event marketing, you need something that serves your brand identity well while also delivering the utmost in professionalism. Commercial pop up tents are one of the most often used outdoor displays, and with good reason: they provide an attractive branding surface and also protect both staff members and event-goers from the sometimes harsh outdoor elements.</p>
+        </div>
 	</div>
 </div>
 {% endblock %}

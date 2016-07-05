@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD | Signs &amp; Banners{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row signs-header">
+    </div>
+</div>
+<div class="container-fluid color-black">
 	<div class="row">
-		<div class="col-md-12">
-			<h1>Signs &amp; Banners</h1>
-		</div>
+        <div class="col-lg-4 col-lg-offset-1">
+			<h1 class="border-bottom-dashed oswald-medium text-red">Signs and Banners</h1>
+            <p class="text-white">Custom signs from IMD include a world of shapes, materials, sizes, colors, type-styles, or special features. Allow our experts to work with you to evaluate your needs and suggest custom signs that will fit your budget and exceed your expectations. It may be a certain look you’re after or it could mean designing a system of signs that differentiate you from your competition. Our efficient approach to production combined with our extensive array of materials and suppliers mean that your custom sign products will be prepared on time and to your complete satisfaction.</p>
+            <h3 class="oswald-medium text-red">Banners</h3>
+            <p class=" text-white">Banners can be used for a range of purposes. Bring them to conventions to increase brand recognition and value, or use them in house to call out new products and promotions. For nearly every event your company hosts or attends, a custom banner can help spread your marketing message.</p>
+            <h3 class="oswald-medium text-red">Outdoor and Indoor</h3>
+            <p class=" text-white">Banners are made for use in both indoor and outdoor situations. This is why you can choose outdoor-quality vinyl for advertising on the exterior of your business or storefront. Indoor banners stand up to regular use inside your business, and both types offer long-lasting durability.</p>
+        </div>
+        <div class="col-lg-6">
+            <img src="{% static 'images/banner.png' %}" class="img-responsive">
+        </div>
 	</div>
 </div>
 {% endblock %}

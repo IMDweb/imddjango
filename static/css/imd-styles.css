@@ -164,7 +164,7 @@ body {
 	background-attachment: fixed;
 	background-repeat: repeat-x;
 	background-position: 0px 0px;
-	min-height: 750px;
+	min-height: 600px;
 	height: 100%;
 	//animation: bgzoom 30s ease infinite;
 	animation: bgmove linear 80s infinite;
@@ -477,3 +477,354 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', end
 	width: 100%;
 	max-width: 350px;
 }
+
+
+
+/* JOSHES STYLES */
+
+/* TEXT */
+
+.roboto-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.roboto-medium {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.roboto-light {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.roboto-thin {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.oswald-bold {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.oswald-medium {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.oswald-light {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-gray {
+    color: darkgray;
+}
+
+.text-red {
+    color: red;
+}
+.text-dark-mustard {
+    color: #996600;
+}
+
+.text-mustard {
+    color: #ffcc33;
+}
+
+.text-crimson {
+    color: #333366;
+}
+
+/* BACKGROUND COLOR */
+
+.color-black{
+    background-color: black;
+}
+
+.color-blue{
+    background-color: royalblue;
+}
+
+.color-gray{
+    background-color: gray;
+}
+
+.color-lightgray{
+    background-color: lightgray;
+}
+
+.color-red {
+    background-color: red;
+}
+
+.color-orange {
+    background-color: darkorange;
+}
+
+.color-mustard {
+    background-color: #ffcc33;
+}
+
+.dark-blue {
+    background-color: #333366;
+}
+
+.vcontent {
+    float:none;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.bottom-padding {
+    padding-bottom: 20px;
+}
+
+.top-padding {
+    padding-top: 20px;
+}
+
+
+.border-bottom-dashed {
+    border-bottom-style: dashed;
+}
+
+
+.branding-info {
+    background-image: url("../images/brand.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.round-corners {
+    border-radius: 50px;
+}
+
+
+.margin-bottom {
+    margin-bottom: 60px;
+}
+
+.margin-top {
+    margin-top: 60px;
+}
+
+.shadow {
+    webkit-box-shadow: 5px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+}
+
+.padding {
+    padding: 20px 40px 20px 40px;
+}
+
+.design-header {
+    background-image: url("../images/brand.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+
+.vehicle-header {
+    background-image: url("../images/willie-1.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    text-align: center;
+    position: relative;
+}
+
+.tradeshow {
+    background-image: url("../images/tradeshow-event.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+
+.signs-header {
+    background-image: url("../images/signs.png");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.image-head {
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.rick-pic {
+    background-image: url("../images/rick-3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.decals-header {
+    background-image: url("../images/decals.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.wall-header {
+    background-image: url("../images/wall-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.web-header {
+    background-image: url("../images/web-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+@media screen and (min-width: 950px) {
+    .flash {
+        float: right;
+        clear: all;
+        position: absolute;
+        left: 500px;
+        top: -300px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .flash {
+        float: right;
+        clear: all;
+        position: absolute;
+        left: 500px;
+        top: -100px;
+    }
+}
+
+/* Large Screen */
+@media screen and (min-width: 1200px) {
+    .xerox {
+        float: right;
+        clear: all;
+        position: absolute;
+        left: 0px;
+        top: 500px;
+    }
+}
+
+/* small screen */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .xerox {
+        float: right;
+        clear: all;
+        position: absolute;
+        left: 500px;
+        top: 0px;
+    }
+}
+
+/* XS small screen */
+@media screen and (max-width: 767px) {
+    .xerox {
+        float: right;
+        clear: all;
+        position: absolute;
+        left: -500px;
+        top: 400px;
+        width: 350px;
+    }
+}
+
+.studio {
+    background-image: url("../images/studio-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.isais-pic {
+    background-image: url("../images/isais.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.rick-pic {
+    background-image: url("../images/rick-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

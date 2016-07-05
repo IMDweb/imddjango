@@ -1,12 +1,45 @@
 {% extends 'base.html' %}
 {% block head_title %}IMD-SD | Design Services{% endblock %}
 {% block content %}
-<div class="jumbotron"></div>
-<div class="container">
+{% load staticfiles %}
+<div class="container-fluid">
+    <div class="row design-header">
+    </div>
+</div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<h1>Design Services</h1>
+		<div class="col-md-5 col-lg-offset-1">
+			<h1 class="border-bottom-dashed oswald-medium">Design Services</h1>
+            <p class="text-gray">Your business is unique. Our graphic design services will help you show your customers and possible clients just how your business is different throughout your marketing materials. We will use our knowledge, creativity and graphic design experience to create beautiful layouts, designs and illustrations that demonstrate your company’s uniqueness and effectively communicate your message. Our graphic designs are original and created specifically for your business in the style that matches your personality and your business branding.</p>
+            <p class="text-gray">Great design makes your marketing materials easier and more enjoyable to read. Great design can be used to explain complicated information. Great design can turn leads into customers. We can create nearly any kind of print design, including fliers, brochures, info-graphics, business cards, catalogue, reports, trade show booth designs and more.</p>
+            <h3 class="oswald-medium">Why should I care about branding?</h3>
+            <p class="text-gray">Branding is one of the most important aspects of any business, large or small, retail or B2B. An effective brand strategy gives you a major edge in increasingly competitive markets. Your brand is your promise to your customer. It tells them what they can expect from your products and services, and it differentiates your offering from your competitors’. Your brand is derived from who you are, who you want to be and who people perceive you to be.</p>
 		</div>
+        <div class="col-lg-6 col-md-6">
+            <img src="{% static 'images/brand-crane.png' %}" style="width: 100%">
+        </div>
 	</div>
+    <div class="row bottom-padding">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h1 class="text-center border-bottom-dashed oswald-medium">Our design approach is tried and tested</h1>
+            <p class="lead text-center oswald-light text-gray"> Over the years we have come up with a simple yet effective approach for clients that want effect designs that stay true to there brand.</p>
+        </div>
+        <div class="col-lg-2 col-lg-offset-2 col-md-4 col-sm-4">
+            <img src="{% static 'images/1.png' %}" class="img-responsive">
+            <h1 class="text-center oswald-medium">Research</h1>
+            <h4 class="text-center oswald-medium text-gray">Clarify vision and Goals<br><br>Evaluate Existing Brands<br><br>Conduct Research</h4>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 col-md-4 col-sm-4">
+            <img src="{% static 'images/2.png' %}" class="img-responsive">
+            <h1 class="text-center oswald-medium">Designing</h1>
+            <h4 class="text-center oswald-medium text-gray">Brainstorm big idea
+<br><br>Design brand identity<br><br>Present visual strategy</h4>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 col-md-4 col-sm-4">
+            <img src="{% static 'images/3.png' %}" class="img-responsive">
+            <h1 class="text-center oswald-medium">Touch Points</h1>
+            <h4 class="text-center oswald-medium text-gray">Finalize identity design<br><br>Develop look and feel<br><br>Create guidelines</h4>
+        </div>
+    </div>
 </div>
 {% endblock %}
