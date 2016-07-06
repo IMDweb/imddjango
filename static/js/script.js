@@ -162,5 +162,18 @@ $(document).ready(function(){
 		$('.nav-tabs a').on('shown.bs.tab', function (e) {
 		    window.location.hash = e.target.hash;
 		})
+
+	// Services from the index page
+	var $window = $(window);
+	var $desktop = $('#desktop-services');
+	var $mobile = $('#mobile-services');
+	if($window.innerWidth() < 768){
+		$desktop.hide();
+		$mobile.show();
+	} else {
+		$desktop.show();
+		$mobile.hide();
+	}
+	
 })
 

@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^services/signs-banners/$', views.signs_banners, name='signs_banners'),
     url(r'^services/printing/$', views.printing, name='printing'),
     url(r'^services/photography/$', views.photography, name='photography'),
-    url(r'^service/window-wall-floor/$', views.window_wall_floor, name='window_wall_floor'),
+    url(r'^services/window-wall-floor/$', views.window_wall_floor, name='window_wall_floor'),
     # Gallery Page
     url(r'^gallery/$', views.gallery, name="gallery"),
     # Contact Page

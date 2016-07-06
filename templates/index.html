@@ -11,22 +11,28 @@
 {% endblock %}
 {% block title %}{% endblock %}
 {% block content %}
+<div id="mobile-services">
+    	{% if category %}
+    		{% for cat in category %}<div class="col-md-6 {{cat.slug}} service-category">
+    			<h2 class="serv-title"><a href="services/{{cat.slug}}">{{ cat.name }}</a></h2>
+    		</div>
+    		{% endfor %}
+    	{% endif %}
+    </div>
 <div class="container-fluid">
+	
     <div class="row color-red">
 		<div class="col-md-4 col-lg-4 col-md-offset-1 col-sm-12 top-padding bottom-padding">
 			<h1 class="oswald-medium border-bottom-dashed">ABOUT</h1>
 			<p class="text-white">IMD is an agile team of artist, designers, developers, doers, go getters and overall awesome people. We love to build brands, take beautiful photos, construct unique websites and print amazing things with a passion for creating exceptional work for exceptional clients. We are the creators of creativity, the ones who build bridges and tear down walls, all in the pursuit of design immortality.</p>
-            <button type="button" class="about-button">
-                <span>
-                    <h3 class="roboto-light">Learn More</h3>
-                </span>
-            </button>
+            <a href="{% url 'contact' %}" type="button" class="about-button">
+                    Learn More
+            </a>
 		</div>
         <div class="col-lg-6 col-md-6 col-md-offset-1 isais-pic">
         </div>
 	</div>
-    <div class="row">
-        <div class="col-md-5 col-md-offset-1">
+    <div class="row" id="desktop-services">
     <!--<div class="row">
         <div class="col-md-2 col-md-offset-1">
             <h1 class="border-bottom-dashed oswald-medium">Vehicle Wraps</h1>
@@ -37,38 +43,31 @@
             <p class="text-gray">Your vehicles will inevitably show the signs of clocking up miles on Britain’s motorways. By wrapping your vehicle you can not only enhance your brand, you can also protect your paintwork. We always use matching protective over-laminate with our vehicle wraps, which extends their life and look as well as protecting your paintwork from stone chips and minor abrasions.</p>
         </div>
     </div>-->
-    <div class="container-fluid">
-    	{% if category %}
-    		{% for cat in category %}
-    		<div class="col-md-6">
-    			<h2 class="border-bottom-dashed oswald-medium"><a href="services/{{cat.slug}}">{{ cat.name }}</a></h2>
-				<p class="text-grey"> {{ cat.desc}} </p>
-    		</div>
-    		{% endfor %}
-    	{% endif %}
-    </div>
+    
     <div class="row rick-pic">
         <div class="col-md-4 col-md-offset-7 m-x-auto m-l-1">
             <h2 class="text-md-center oswald-light text-center text-white" style="text-shadow: 2px 2px black;">Vehicle Wraps are an essential to building stronger business and brands</h2>
             <img src="{% static "images/van.png" %}" width="100">
             <img src="{% static "images/van.png" %}" width="100">
             <img src="{% static "images/van.png" %}" width="100">
-            <button type="button" class="button-vehicle text-lg-center">
-                <span>
-                    <h3 class="roboto-light">Learn More</h3>
-                </span>
-            </button>
+            <a class="button-service text-lg-center" href="{% url 'vehicle_wraps' %}">
+                Learn More
+            </a>
         </div>
     </div>
     
-    <div class="row bottom-padding">
+    <div class="row bottom-padding printing-section">
         <div class="col-lg-offset-1 col-lg-4 col-md-6 col-sm-6">
             <h1 class="border-bottom-dashed oswald-medium">Printing</h1>
             <p class="text-gray">Your presentations, flyer’s and posters speak for you wherever they go and color makes you look like a pro. It brings your ideas to life and underscores the quality of your products or services.</p>
             <h3 class="oswald-medium">Flyers</h3>
             <p class="text-gray">Flyer’s have been a marketing staple for decades – and with good reason. They’re essential for promoting events, advertising sales, drumming up business for store openings and so much more.</p>
+            <a href="{% url 'printing' %}" class="button-service">Learn More</a>
 		</div>
-        <img src="{% static 'images/latex.png' %}" class="latex">
+		<div class="col-lg-5 col-md-5 col-md-offset-1">
+			<img src="{% static 'images/latex.png' %}" class="latex">
+		</div>
+        
         <div class="col-lg-6 col-md-6 col-lg-offset-3">
             <h1 class="text-center border-bottom-dashed oswald-medium">Quality is our guarantee</h1>
             <p class="lead text-center oswald-light text-gray">We pride ourselves on always carring the best material for your project. If we dont have it on hand we will find it for you.</p>
@@ -81,7 +80,7 @@
 			<img src="{% static "images/avery.png" %}" class="brands-used">
 		</div>
 	</div>
-    <div class="row" style="background-color: darkgrey;">
+    <div class="row" style="background-color: darkgrey; padding-bottom: 15px;">
         <div class="col-md-12">
              <img src="{% static "images/branding-home.png" %}" class="img-responsive center-block animate">
         </div>
@@ -93,42 +92,67 @@
             <h1 class="border-bottom-dashed oswald-medium">Adding Value</h1>
             <p class="text-white">Consistent, strategic branding leads to a strong brand equity, which means the added value brought to your company's products or services that allows you to charge more for your brand than what identical, unbranded products command.</p>
         </div>
+        <div class="col-md-12 col-lg-11 col-lg-offset-1">
+        	<a href="{% url 'design_service' %}" class="button-service">Learn More</a>
+        </div>
     </div>
-		<!-- <div class="col-md-10 col-md-offset-1 col-sm-12">
-			<h1>Portfolio</h1>
-			{% if gallery %}
-				
-				<div id="lightbox">
-					<ul>
-					{% for gal in gallery %}
-						<li>
-							<div class="gallery-image-container">
-								<img class="gallery-image" src="{{ gal.thumbnail.url }}" alt="{{ gal.name }}" data-large="{{ gal.image.url }}">
-								<div class="image_title">
-									<h5 class="title">{{ gal.name }}</h5>
-								</div>
-							</div>
-						</li>
-					{% endfor %}
-					</ul>
-				</div>
-				
-			{% endif %}
-		</div> -->
-<<<<<<< HEAD
-=======
-	<!-- <div class="row" id="contact">
-		<div class="col-md-5 col-md-offset-1 col-sm-12">
-			<h1>MAP</h1>
-		</div>
-		<div class="col-md-5 col-sm-12">
-			<form role="form" method="POST" action="">
-				{% csrf_token %}
-            	{{ form.as_p }}
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</div>
-	</div>-->
->>>>>>> 8aa204e5bfde232905076be11ae67bd1a0e94113
+    <div class="row web-section">
+    	<div class="col-md-6 col-lg-5 col-lg-offset-1">
+    		<img src="{% static 'images/wizard.jpg' %}" class="web-image">
+    	</div>
+    	<div class="col-md-6 col-lg-5">
+    		<h1 class="border-bottom-dashed oswald-medium">Web Design</h1>
+            <p class="text-grey">IMD has got you covered when it comes to designing eye-catching, creative, professional and cost-effective web design. Our talented staff will help translate your vision into reality. We concentrate on your unique characteristics to distinguish you from the competition and create a strong public image. Let us help you gain a web presence that will support your product or service and communicate your concept to the world..</p>
+            <a href="{% url 'web_design' %}" class="button-service">Learn More</a>
+    	</div>
+    </div>
+    <div class="row tradeshow-section">
+    	<div class="col-md-12 col-lg-5 col-lg-offset-1">
+    		<h1 class="border-bottom-dashed oswald-medium">Tradeshows</h1>
+    		<p class="text-white">Looking for brilliant graphics that attract customers to your booth? You’ve come to the right place! We give you bright graphics and crisp photos that demand attention. Our designers have produced effective trade show graphics for hundreds of trade show booths.</p>
+    		<h2 class="border-bottom-dashed oswald-medium">Show Up Prepared</h2>
+    		<p class="text-white">Dont let your tradeshow booth be a sight for soar eyes. Our tradeshow designs will give you an edge in the competition and have you raining business cards.</p>
+    		<a href="{% url 'tradeshows' %}" class="button-service">Learn More</a>
+    	</div>
+    	<div class="col-lg-5 col-md-6">
+    		<img src="{% static 'images/tradeshow.png' %}" alt="Tradeshows">
+    	</div>
+    </div>
+    <div class="row signbanner-section">
+    	<div class="col-md-12 col-lg-5 col-lg-offset-1">
+    		<h1 class="border-bottom-dashed oswald-medium">Signs</h1>
+    		<p class="text-gray">Custom signs from IMD include a world of shapes, materials, sizes, colors, type-styles, or special features. Allow our experts to work with you to evaluate your needs and suggest custom signs that will fit your budget and exceed your expectations. It may be a certain look you’re after or it could mean designing a system of signs that differentiate you from your competition. Our efficient approach to production combined with our extensive array of materials and suppliers mean that your custom sign products will be prepared on time and to your complete satisfaction.</p>
+    		<a href="{% url 'signs_banners' %}" class="button-service">Learn More</a>
+    	</div>
+    	<div class="col-md-12 col-lg-5">
+    		<h1 class="border-bottom-dashed oswald-medium">Banners</h1>
+    		<p class="text-gray">Banners can be used for a range of purposes. Bring them to conventions to increase brand recognition and value, or use them in house to call out new products and promotions. For nearly every event your company hosts or attends, a custom banner can help spread your marketing message.</p>
+    	</div>
+    	<div class="col-md-12 white-space"></div>
+    </div>
+    <div class="row window-section">
+    	<div class="col-md-6 col-lg-5 col-lg-offset-1">
+    		<div class="floor-image">
+    			<img src="{% static 'images/rick-3.jpg' %}" alt="Floors">
+    		</div>
+    		
+    	</div>
+    	<div class="col-md-6 col-lg-5">
+    		<h1 class="border-bottom-dashed oswalt-medium text-red">Windows / Walls / Floors</h1>
+    		<p class="text-white">Our indoor wall murals and custom wall paper are ideal for large indoor wall spaces, where texturing is a consideration. We print our wall murals and custom wallpaper on a wallpaper-like material, specially formulated for our large-format printer. Our wall murals and custom wallpaper is affixed to a wall like traditional wallpaper. This application is ideal for homes, offices and corporate suites – places where the consumer’s creative demands typically exceed the limits of wallpaper.</p>
+    		<a href="{% url 'window_wall_floor' %}" class="button-service">Learn More</a>
+    	</div>
+    </div>
+    <div class="row photo-section">
+    	<div class="col-md-7 col-lg-7 white-space-photo">
+    		
+    	</div>
+    	<div class="col-md-3 col-lg-3 ">
+    		<h1 class="border-bottom-dashed oswalt-medium text-white">Photography</h1>
+    		<p>High quality visual content is essential for any effective digital mar- keting campaign. The sophisticated modern consumer expects to see what they are going to get, wear, taste and experience long before they will do so in person.</p>
+    		<a href="{% url 'photography' %}" class="button-service">Learn More</a>
+    	</div>
+    </div>
+	</div>
 </div>
 {% endblock %}
