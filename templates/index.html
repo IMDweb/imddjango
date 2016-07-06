@@ -13,15 +13,20 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row color-red">
-		<div class="col-md-5 col-lg-5 col-md-offset-1 col-sm-12 top-padding bottom-padding">
+		<div class="col-md-4 col-lg-4 col-md-offset-1 col-sm-12 top-padding bottom-padding">
 			<h1 class="oswald-medium border-bottom-dashed">ABOUT</h1>
 			<p class="text-white">IMD is an agile team of artist, designers, developers, doers, go getters and overall awesome people. We love to build brands, take beautiful photos, construct unique websites and print amazing things with a passion for creating exceptional work for exceptional clients. We are the creators of creativity, the ones who build bridges and tear down walls, all in the pursuit of design immortality.</p>
+            <button type="button" class="about-button">
+                <span>
+                    <h3 class="roboto-light">Learn More</h3>
+                </span>
+            </button>
 		</div>
-        <div class="col-lg-6 col-md-6 isais-pic">
+        <div class="col-lg-6 col-md-6 col-md-offset-1 isais-pic">
         </div>
 	</div>
     <div class="row">
-        <div class="col-md-2 col-md-offset-1">
+        <div class="col-md-5 col-md-offset-1">
             <h1 class="border-bottom-dashed oswald-medium">Vehicle Wraps</h1>
             <p class="text-gray">A wrap is a large vinyl graphic or decal thats applied directly over the original paint of the vehicle. The application of the wrap allows you to change the vehicles appearance in a very short period of time and in turn allows you to remove the wrap, returning the vehicle back to its original condition if necessary.</p>
         </div>
@@ -31,8 +36,31 @@
         </div>
     </div>
     <div class="row rick-pic">
+        <div class="col-md-4 col-md-offset-7 m-x-auto m-l-1">
+            <h2 class="text-md-center oswald-light text-center text-white" style="text-shadow: 2px 2px black;">Vehicle Wraps are an essential to building stronger business and brands</h2>
+            <img src="{% static "images/van.png" %}" width="100">
+            <img src="{% static "images/van.png" %}" width="100">
+            <img src="{% static "images/van.png" %}" width="100">
+            <button type="button" class="button-vehicle text-lg-center">
+                <span>
+                    <h3 class="roboto-light">Learn More</h3>
+                </span>
+            </button>
+        </div>
     </div>
-    <div class="row">
+    
+    <div class="row bottom-padding">
+        <div class="col-lg-offset-1 col-lg-4 col-md-6 col-sm-6">
+            <h1 class="border-bottom-dashed oswald-medium">Printing</h1>
+            <p class="text-gray">Your presentations, flyer’s and posters speak for you wherever they go and color makes you look like a pro. It brings your ideas to life and underscores the quality of your products or services.</p>
+            <h3 class="oswald-medium">Flyers</h3>
+            <p class="text-gray">Flyer’s have been a marketing staple for decades – and with good reason. They’re essential for promoting events, advertising sales, drumming up business for store openings and so much more.</p>
+		</div>
+        <img src="{% static 'images/latex.png' %}" class="latex">
+        <div class="col-lg-6 col-md-6 col-lg-offset-3">
+            <h1 class="text-center border-bottom-dashed oswald-medium">Quality is our guarantee</h1>
+            <p class="lead text-center oswald-light text-gray">We pride ourselves on always carring the best material for your project. If we dont have it on hand we will find it for you.</p>
+        </div>
 		<div class="col-md-12 brands">
 			<img src="{% static "images/3m.png" %}" class="brands-used">
 			<img src="{% static "images/oracal.png" %}" class="brands-used">
@@ -41,8 +69,18 @@
 			<img src="{% static "images/avery.png" %}" class="brands-used">
 		</div>
 	</div>
-    <div class="row">
-        
+    <div class="row" style="background-color: darkgrey;">
+        <div class="col-md-12">
+             <img src="{% static "images/branding-home.png" %}" class="img-responsive center-block animate">
+        </div>
+        <div class="col-md-5 col-md-offset-1">
+            <h1 class="border-bottom-dashed oswald-medium">Brand Strategy</h1>
+            <p class="text-white">Branding is one of the most important aspects of any business, large or small, retail or B2B. An effective brand strategy gives you a major edge in increasingly competitive markets.Simply put, your brand is your promise to your customer. It tells them what they can expect from your products and services, and it differentiates your offering from your competitors'. Your brand is derived from who you are, who you want to be and who people perceive you to be.</p>
+        </div>
+        <div class="col-md-5">
+            <h1 class="border-bottom-dashed oswald-medium">Adding Value</h1>
+            <p class="text-white">Consistent, strategic branding leads to a strong brand equity, which means the added value brought to your company's products or services that allows you to charge more for your brand than what identical, unbranded products command.</p>
+        </div>
     </div>
 		<!-- <div class="col-md-10 col-md-offset-1 col-sm-12">
 			<h1>Portfolio</h1>
@@ -65,23 +103,5 @@
 				
 			{% endif %}
 		</div> -->
-		<div class="row sign-sec">
-			<div class="col-md-10 col-md-offset-1 signs">
-				<h2><span class="fa fa-angle-right fa-2x"></span> Signs</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet placerat sem. Mauris at enim turpis. Integer tempus erat vel purus rhoncus, at sagittis metus placerat. Sed ullamcorper tortor non nulla elementum pharetra. Vestibulum laoreet neque.</p>
-			</div>
-		</div>
-	<div class="row" id="contact">
-		<div class="col-md-5 col-md-offset-1 col-sm-12">
-			<h1>MAP</h1>
-		</div>
-		<div class="col-md-5 col-sm-12">
-			<form role="form" method="POST" action="">
-				{% csrf_token %}
-            	{{ form.as_p }}
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</div>
-	</div>
 </div>
 {% endblock %}
