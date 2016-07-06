@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'imdapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'imddb',
-        'USER': 'postgres',
-        'PASSWORD': 'SDimd2015',
-        'HOST': 'localhost',
+        'NAME': 'darh45uodsq2ha',
+        'USER': 'morossvajmsafd',
+        'PASSWORD': 'V7X--nnNO3ZL_eABb7HDXgPt1X',
+        'HOST': 'ec2-50-19-236-35.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
