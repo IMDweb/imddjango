@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'imdapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'imddb',
-        'USER': 'postgres',
-        'PASSWORD': 'sdimd2014',
-        'HOST': 'localhost',
+        'NAME': 'darh45uodsq2ha',
+        'USER': 'morossvajmsafd',
+        'PASSWORD': 'V7X--nnNO3ZL_eABb7HDXgPt1X',
+        'HOST': 'ec2-50-19-236-35.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -147,5 +147,7 @@ EMAIL_HOST_USER = 'jesus@imd-sd.com'
 EMAIL_HOST_PASSWORD = 'SDimd2015'
 EMAIL_USE_TLS = False
 EMAIL_PORT = 465
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MAILCHIMP_API_KEY = 'c67b588eb516ec5137e840d2c493dc11-us13'
