@@ -148,12 +148,12 @@ STATICFILES_FINDERS = (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_MAIL = 'jesus@imd-sd.com'
-EMAIL_HOST = 'p3plcpnl0181.prod.phx3.secureserver.net'
-EMAIL_HOST_USER = 'jesus@imd-sd.com'
-EMAIL_HOST_PASSWORD = 'SDimd2015'
-EMAIL_USE_TLS = False
-EMAIL_PORT = 465
+DEFAULT_FROM_MAIL = 'info@imd-sd.com'
+EMAIL_HOST = 'mail.imd-sd.com'
+EMAIL_HOST_USER = 'info@imd-sd.com'
+EMAIL_HOST_PASSWORD = 'SDimd2016'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 25
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

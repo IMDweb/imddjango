@@ -3,15 +3,52 @@
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
-<div class="container-fluid" style="margin-top: 150px;">
-<div class="col-md-4 col-md-offset-4">
-	<form method="post">
-		{% csrf_token %}
-		{{ form }}
-		<div class="form-action">
-			<button type="submit" class="btn btn-primary">Send</button>
+{% load staticfiles %}
+<div class="container-fluid contact-page">
+	<div class="row">
+		<div class="col-md-12">
+			<img src="{% static 'images/send-mail-icon.png' %}" alt="contact Header">
 		</div>
-	</form>
+	</div>
 </div>
+<div class="container-fluid contact-content">
+	<div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 form-bg">
+				<div class="row">
+					<div class="col-md-12 contact-top-content">
+						<h1>Contact Form</h1>
+						<hr>
+						<h2>We want to hear from you!</h2>
+						<p>If you have any questions about us, or want a quote for a specific job let us know!</p>
+					</div>
+					<div class="col-md-5 col-md-offset-1 contact-left-side">
+						<h4><span class="fa fa-map-marker fa-2x"></span>   133 Highland Ave Ste. A-1 National City, CA 91950
+						</h4>
+						<h4><span class="fa fa-envelope-o fa-2x"></span>   INFO@IMD-SD.COM</h4>
+						<h4><span class="fa fa-phone fa-2x"></span>   (619) 677-4477
+						</h4>
+						<h4><span class="fa fa-clock-o fa-2x"></span> Mon. - Fri. 9AM - 5:30PM</h4>
+						&nbsp;
+						<h4>SUBJECT</h4>
+						<p>If you are looking for more information on a service we provide, please let us know in the subject. For example, if you are looking to get a partial wrap you can put "Vehicle Wrap" or "Partial Wrap." </p>
+						&nbsp;
+						<h4>HIGH TRAFFIC</h4>
+						<p>If we are taking too long to responde to your message please give us a call. We will help you ASAP. We are available MON. - FRI. 9AM - 5:30PM</p>
+					</div>
+					<div class="col-md-5">
+						<form method="post">
+								{% csrf_token %}
+								{{ form }}
+							<div class="form-action">
+								<button type="submit" class="btn btn-contact">Send</button>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}

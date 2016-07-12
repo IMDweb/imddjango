@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.core.mail import BadHeaderError, send_mail
+from django.core.mail import BadHeaderError, send_mail, EmailMessage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from django.template import Context
@@ -95,15 +95,29 @@ def contact(request):
 			email = form.cleaned_data['contact_email']
 			first_name = form.cleaned_data['contact_name']
 			last_name = form.cleaned_data['contact_last_name']
-			message = form.cleaned_data['contact_name']
-			context = 'Name: ', first_name, ' ', last_name, '\n', 'Email: ', email, '\n', 'Message: ', message
+			message = form.cleaned_data['contact_message']
+			template = get_template('contact_template.txt')
+			context = Context({
+				'contact_first_name': first_name,
+				'contact_last_name': last_name,
+				'contact_email': email,
+				'contact_subject': subject,
+				'message': message,
+			})
+			content = template.render(context)
+			email_message = EmailMessage(
+				"New Contact Message",
+				content,
+				email,
+				['jesus@imd-sd.com']
+			)
 			try:
-				send_mail(subject, context, email, ['jesus@imd-sd.com'])
+				email_message.send()
 			except BadHeaderError:
 				return HttpResponse('Invalid header found.')
-			return redirect('thanks')
+		return redirect('thanks')
 	return render(request, 'contact.html', {
 			'form': form,
 		})
 def thanks(request):
-	return redirect(request, 'thank_you.html')
+	return render(request, 'thank_you.html')
