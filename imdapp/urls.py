@@ -38,6 +38,6 @@ urlpatterns = [
     url(r'^gallery/$', views.gallery, name="gallery"),
     # Contact Page
     url(r'^contact/$', views.contact, name='contact'),
-    url(r'^contact_form/$', views.index, name='contact_form')
+    url(r'^thank_you/$', views.thanks, name='thanks'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

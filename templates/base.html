@@ -55,10 +55,10 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<p class="navbar-text">
-						<a href="https://www.facebook.com/imdsandiego" target="blank"><span class="fa fa-facebook facebook"></span></a> | 
-						<a href="https://twitter.com/imdsandiego" target="blank"><span class="fa fa-twitter twitter"></span></a> | 
-						<a href="https://www.instagram.com/imdsandiego/" target="blank"><span class="fa fa-instagram instagram"></span></a> | 
-						<a href="http://www.yelp.com/biz/imd-national-city" target="blank"><span class="fa fa-yelp yelp"></span></a>
+						<a href="https://www.facebook.com/imdsandiego" target="blank"><span class="fa fa-facebook fa-2x facebook"></span></a>  
+						<a href="https://twitter.com/imdsandiego" target="blank"><span class="fa fa-twitter fa-2x twitter"></span></a>  
+						<a href="https://www.instagram.com/imdsandiego/" target="blank"><span class="fa fa-instagram fa-2x instagram"></span></a>  
+						<a href="http://www.yelp.com/biz/imd-national-city" target="blank"><span class="fa fa-yelp fa-2x yelp"></span></a>
 					</p>
 				</ul>
 			</div>
@@ -74,13 +74,13 @@
 					<div class="col-md-3">
 						<h4>Address</h4>
 						<address>133 Highland Ave Ste. A-1<br>National City, CA 91950</address>
-						<span class="fa fa-phone"></span> <a href="tel: 619 677 4477">(619) 677-4477</a>
+						<span class="fa fa-phone"></span> <a href="tel: 619 677 4477" class="footer-phone">(619) 677-4477</a>
 					</div>
 					<div class="col-md-3">
-						FACEBOOK
+						<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
 					</div>
 					<div class="col-md-3">
-						INSTAGRAM
+						<div id="instafeed"></div>
 					</div>
 					<div class="col-md-3">
 						flicker
@@ -92,8 +92,6 @@
 	<div class="copyright">
 		<h5>&copy; 2016 | IMD-SD</h5>
 	</div>
-	<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/prefixfree.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/script.js" %}"></script>
+	{% include 'javascripts.html' %}
 </body>
 </html>

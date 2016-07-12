@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.core.mail import EmailMessage, send_mail
+from django.shortcuts import render, redirect
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from django.template import Context
 from imd.models import Service, Category, Document
@@ -8,40 +9,10 @@ from imd.forms import ContactForm
 
 # Create your views here.
 def index(request):
-	form_class = ContactForm
-	if request.method =='POST':
-		form = form_class(request.POST, request.FILES)
-
-		if form.is_valid():
-			contact_name = request.POST.get('contact_name', '')
-			contact_last_name = request.POST.get('contact_last_name', '')
-			contact_email = request.POST.get('contact_email', '')
-			contact_message = request.POST.get('contact_message', '')
-			# contact_upload = Document(docfile=request.FILES['docfile'])
-			template = get_template('contact_template.txt')
-			context = Context({
-					'contact_name': contact_name,
-					'contact_last_name': contact_last_name,
-					'contact_email': contact_email,
-					'contact_message': contact_email,
-					'contact_upload': contact_upload,
-				})
-			content = template.render(context)
-			email = EmailMessage(
-					"New Contact From Submission",
-					content,
-					['jesus@imd-sd.com'],
-					headers = {'Reply-to', contact_email})
-			email.send_mail()
-			return redirect('services')
-	documents = Document.objects.all()
-
-
 	return render(request, 'index.html', {
 		'services': Service.objects.all(),
 		'category': Category.objects.all(),
 		'gallery': ImageGallery.objects.all(),
-		'form': form_class,
 		})
 
 def services(request):
@@ -113,3 +84,26 @@ def window_wall_floor(request):
 		'service': Service.objects.all(),
 		'category': Category.objects.all(),
 		})
+
+def contact(request):
+	if request.method == 'GET':
+		form = ContactForm
+	else:
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			subject = form.cleaned_data['contact_subject']
+			email = form.cleaned_data['contact_email']
+			first_name = form.cleaned_data['contact_name']
+			last_name = form.cleaned_data['contact_last_name']
+			message = form.cleaned_data['contact_name']
+			context = 'Name: ', first_name, ' ', last_name, '\n', 'Email: ', email, '\n', 'Message: ', message
+			try:
+				send_mail(subject, context, email, ['jesus@imd-sd.com'])
+			except BadHeaderError:
+				return HttpResponse('Invalid header found.')
+			return redirect('thanks')
+	return render(request, 'contact.html', {
+			'form': form,
+		})
+def thanks(request):
+	return redirect(request, 'thank_you.html')

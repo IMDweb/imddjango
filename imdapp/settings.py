@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
     'imd',
     'portfolio',
     'mailchimp',
@@ -139,6 +140,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/"),
     os.path.join(BASE_DIR, "media/"),
     ]
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contribstaticfiless.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_MAIL = 'jesus@imd-sd.com'

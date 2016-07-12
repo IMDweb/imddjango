@@ -179,7 +179,7 @@ a:hover {
 	margin-bottom: 0px;
 }
 .navbar-inverse {
-	background: #000;
+	background: #fff;
 	padding-bottom: 10px;
 	padding-top: 10px;
 	font-size: 20px;
@@ -232,9 +232,9 @@ a:hover {
 	animation: logorotate .25s ease;
 }
 .navbar-inverse {
-	border-bottom: 2px #fff solid;
 	height: 65px;
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: #fff;
+	border-bottom: none;
 	-webkit-box-shadow: 2px 2px 5px 1px #616161;
 	box-shadow: 2px 2px 5px 1px #616161;
 }
@@ -252,15 +252,19 @@ a:hover {
 	}
 }
 .navbar-inverse .navbar-nav > li > a {
-	color: #fff;
+	color: #000;
 	ocapicty: 1;
 }
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #c0392b;
+}
 .navbar-inverse .navbar-nav > p {
-	color: #fff;
+	color: #000;
 }
 .navbar-inverse .navbar-nav > p > a {
-	color: #fff;
+	color: #000;
 }
+
 .navbar-inverse .navbar-nav > p > a .facebook:hover {
 	color: #2980b9;
 	transition: ease .25s;
@@ -1032,7 +1036,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', end
 .printing-section {
 	background-color: #000;
 }
-
+.footer-phone {
+	color: #fff;
+}
 
 
 
