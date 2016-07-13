@@ -158,3 +158,5 @@ EMAIL_PORT = 25
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MAILCHIMP_API_KEY = 'c67b588eb516ec5137e840d2c493dc11-us13'
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FOWARDED_PROTO', 'https')
