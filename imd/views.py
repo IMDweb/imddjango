@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.core.mail import BadHeaderError, send_mail, EmailMessage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
@@ -8,6 +9,8 @@ from portfolio.models import ImageGallery
 from imd.forms import ContactForm
 
 # Create your views here.
+
+@xframe_options_exempt
 def index(request):
 	return render(request, 'index.html', {
 		'services': Service.objects.all(),
